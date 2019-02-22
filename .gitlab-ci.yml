@@ -8,7 +8,7 @@ flask-app:
     POSTGRES_USER: runner
     POSTGRES_PASSWORD: ""
   script:
-    - export DATABASE_URL=postgres://runner@postgres:5432/flask_blog
+    - export SQLALCHEMY_DATABASE_URI=postgres://runner@postgres:5432/flask_blog
     - apt-get update -qy
     - apt-get install -y python3-dev python-pip
     - pip install -r requirements.txt
