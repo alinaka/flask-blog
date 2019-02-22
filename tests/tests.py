@@ -6,7 +6,7 @@ from .data_samples import user_data, post_data
 
 class TestFactory(TestCase):
 
-    SQLALCHEMY_DATABASE_URI = "postgresql://flask_blog:flask_blog@localhost/test_flask_blog"
+    # SQLALCHEMY_DATABASE_URI = "postgresql://flask_blog:flask_blog@localhost/test_flask_blog"
     TESTING = True
 
     def create_app(self):
