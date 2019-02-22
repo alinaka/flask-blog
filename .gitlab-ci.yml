@@ -1,8 +1,10 @@
-test:
-  script:
-  # this configures Django application to use attached postgres database that is run on `postgres` host
-  - export DATABASE_URL=postgres://postgres:@postgres:5432/flask-blog
-  - apt-get update -qy
-  - apt-get install -y python3-dev python-pip
-  - pip install -r requirements.txt
-  - nosetests --with-coverage --cover-erase --cover-package=flaskr
+flask-app:
+  image: python:3.6
+  test:
+    script:
+    # this configures Django application to use attached postgres database that is run on `postgres` host
+    - export DATABASE_URL=postgres://postgres:@postgres:5432/flask-blog
+    - apt-get update -qy
+    - apt-get install -y python3-dev python-pip
+    - pip install -r requirements.txt
+    - nosetests --with-coverage --cover-erase --cover-package=flaskr
