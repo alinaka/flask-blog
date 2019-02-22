@@ -18,10 +18,12 @@ def get_post(id, check_author=True):
 
     return post
 
+
 @bp.route("/")
 def index():
     posts = Post.query.all()
     return render_template("blog/index.html", posts=posts)
+
 
 @bp.route("/create", methods=("GET", "POST"))
 @login_required
@@ -43,6 +45,7 @@ def create():
             return redirect(url_for("blog.index"))
 
     return render_template("blog/create.html")
+
 
 @bp.route("/<int:id>/update", methods=("GET", "POST"))
 @login_required
@@ -66,6 +69,7 @@ def update(id):
             return redirect(url_for("blog.index"))
 
     return render_template("blog/update.html", post=post)
+
 
 @bp.route("/<int:id>/delete", methods=("POST",))
 @login_required
