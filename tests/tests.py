@@ -29,7 +29,7 @@ class TestFactory(TestCase):
         return user
 
     def create_post(self):
-        post = Post(**post_data, author_id=self.user.id)
+        post = Post(author_id=self.user.id, **post_data)
         db.session.add(post)
         db.session.commit()
         return post
